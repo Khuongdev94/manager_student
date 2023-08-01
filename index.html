@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Student Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;600&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Student Manager</title>
+        <meta charset="utf-8" />
+      </head>
+      <body>
+        <div class="panel">
+          <div class="panel-body">
+            <h2>Input Information</h2>
+            <form method="post">
+              <div class="form">
+                <label> Name:</label>
+                <input class="form-control" type="text" name="name" id="name" />
+              </div>
+
+              <div class="form">
+                <label>Age:</label>
+                <input class="form-control" type="number" name="age" id="age" />
+              </div>
+
+              <div class="form">
+                <label>Email:</label>
+                <input
+                  class="form-control"
+                  type="email"
+                  name="email"
+                  id="email"
+                />
+              </div>
+
+              <div class="form">
+                <label>MediumScore:</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  name="score"
+                  id="score"
+                />
+              </div>
+
+              <div class="form">
+                <button id="addbtn" type="button" onclick="addStudent()">
+                  Add Student
+                </button>
+                <button id="updatebtn" type="button" onclick="updateStudent()">
+                  Update Student
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <div class="form">
+          <input class="form-control-search" style="display:inline;" type="search" id="search" name="search">
+          <button  class="btn-search" id="searchbtn" type="button" onclick="searchStudent()">
+              Search
+          </button>
+        </div>
+
+        <div class="panel">
+          <div class="panel-table">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>Name <button id="nameASC" type="button" onclick="sort('name','ASC')">
+                    <i class="fa fa-arrow-up"></i> 
+                    </button>
+                    <button id="nameDESC" type="button" onclick="sort('name','DESC')">
+                        <i class="fa fa-arrow-down"></i>
+                    </button></th>
+                  <th>Age <button id="ageASC"  type="button" onclick="sort('age','ASC')">
+                    <i class="fa fa-arrow-up"></i> 
+                    </button>
+                    <button  id="ageDESC" type="button" onclick="sort('age','DESC')">
+                        <i class="fa fa-arrow-down"></i>
+                    </button></th>
+                  <th>Email <button  type="button" onclick="sort('email','ASC')">
+                    <i class="fa fa-arrow-up"></i> 
+                    </button>
+                    <button type="button" onclick="sort('email','DESC')">
+                        <i class="fa fa-arrow-down"></i>
+                    </button></th>
+                  <th>MediumScore <button  type="button" onclick="sort('score','ASC')">
+                    <i class="fa fa-arrow-up"></i>
+                    </button>
+                    <button type="button" onclick="sort('score','DESC')">
+                        <i class="fa fa-arrow-down"></i>
+                    </button></th>
+                  <th>Action</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="tableStudent">
+                <!-- <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <button class="btn btn-warning" onclick="editStudent()">
+                      Edit
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger" onclick="deleteStudent()">
+                      Delete
+                    </button>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+            <div id="listNumberPage"> 
+                <h3>List page</h3>
+                <ul id="numberPage">
+                </ul>  
+                <ul>
+                  <li id="totalitem"></li>
+                </ul> 
+                
+              </div>
+          </div>
+        </div>
+      </body>
+      <script src="./student.js"> </script>
+    </html>
+  </body>
+</html>

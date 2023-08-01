@@ -1,0 +1,129 @@
+h2 {
+    text-align: center;
+    margin: 0;
+  }
+  .panel {
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    .panel-body {
+      width: 25%;
+      background-color: rgba(77, 188, 188, 0.3);
+      padding: 10px;
+      border: 1px rgba(23, 138, 117, 0.7) solid;
+      border-radius: 5px;
+      margin: 0 auto;
+    }
+    
+    .panel-body label {
+      font-weight: bold;
+    }
+    
+    form {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    .form {
+      display: block;
+      margin: 6px auto;
+    }
+    
+    .form-control {
+      display: block;
+      width: 70%;
+      font-size: 16px;
+      margin-top: 5px 0;
+      border-radius: 3px;
+      border: 1px blue solid;
+    }
+  
+    .form-control-search {
+      width: 30%;
+      height: 32px;
+      font-size: 16px;
+      margin-left: 57px;
+      border-radius: 3px;
+      border: 1px blue solid;
+      background-color: rgba(245, 245, 220, 0.764);
+    }
+  
+    .table {
+      width: 91%;
+      margin: 0 auto;
+    }
+  
+    table, th, td{
+      border: 1px solid blue;
+      text-align: center;
+      margin: 0 auto;
+    }
+  
+    table{
+        border-collapse: collapse;
+    }
+    th {
+      font-size: 18px;
+    }
+  
+    #menu ul {
+      margin-top: 20px;
+    }
+  
+    ul {
+      display: inline-block;
+    }
+    li {
+      list-style: none;
+      display: inline;
+      color: blue;
+      padding: 8px;
+      margin-left: 20px;
+      border: 1px rgba(10, 14, 140, 0.841) solid;
+      cursor: pointer;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+  
+    li:hover {
+      font-weight: bolder;
+      background-color: rgba(237, 237, 243, 0.841);
+    }
+    #totalitem {
+      cursor: none;
+      margin-right: 10px auto;
+    }
+  
+    button {
+      padding: 8px;
+      background-color: rgba(245, 245, 220, 0.764);
+      text-align: center;
+      color: blue;
+      font-size: 16px;
+      border: 1px rgba(10, 14, 140, 0.841) solid;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  
+    button:hover { 
+      box-shadow: 0 0 3px 2px rgba(0, 255, 149, 0.609);
+      background-color: rgba(245, 245, 220, 0.2);
+    }
+    .btn-search {
+      padding: 2px;
+      height: 32px;
+      box-sizing: border-box;
+      background-color: rgba(245, 245, 220, 0.764);
+      text-align: center;
+      color: blue;
+      font-size: 14px;
+      border: 1px rgba(10, 14, 140, 0.841) solid;
+      border-radius: 4px;
+    }
+    #listNumberPage {
+      margin-right: 20px auto;
+      text-align: right;
+    }
+  
