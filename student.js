@@ -79,7 +79,8 @@ function filterStudents() {
 }
 
 function addStudent() {
-  var id = Date.now();
+  var arr = students.map((item) => item.id);
+  var id = Math.max(...arr) + 1;
   var age = document.getElementById("age").value;
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
