@@ -1,4 +1,4 @@
-var conditions = {
+const conditions = {
   keySearch: "",
   perPage: 3,
   currentPage: 1,
@@ -9,7 +9,7 @@ var conditions = {
 };
 console.log(conditions);
 
-var students = [
+const students = [
   { id: 1, name: "anh", age: 12, email: "ags@gmail.com", score: 20 },
   { id: 2, name: "hai", age: 15, email: "bs@gmail.com", score: 23 },
   { id: 3, name: "đạt", age: 13, email: "fs@gmail.com", score: 12 },
@@ -29,7 +29,7 @@ renderListStudent();
 document.getElementById("updatebtn").style.display = "none";
 
 function filterStudents() {
-  var resultStudents = JSON.parse(JSON.stringify(students));
+  let resultStudents = JSON.parse(JSON.stringify(students));
   console.log(conditions);
   if (conditions.keySearch) {
     resultStudents = resultStudents.filter((item) => {
@@ -65,7 +65,7 @@ function filterStudents() {
       });
     }
   }
-  var totalItem = resultStudents.length;
+  const totalItem = resultStudents.length;
   renderPageNumber(totalItem);
 
   document.getElementById("totalitem").innerHTML = `${totalItem} student`;
@@ -79,13 +79,13 @@ function filterStudents() {
 }
 
 function addStudent() {
-  var arr = students.map((item) => item.id);
+  const arr = students.map((item) => item.id);
   var id = Math.max(...arr) + 1;
   var age = document.getElementById("age").value;
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   var score = document.getElementById("score").value;
-  var data = {
+  let data = {
     id: id,
     name: name,
     age: age ? Number(age) : age,
@@ -93,7 +93,7 @@ function addStudent() {
     score: score ? Number(score) : score,
   };
 
-  var isValidate = validate(data);
+  const isValidate = validate(data);
   if (!isValidate) {
     return;
   }
@@ -187,15 +187,15 @@ function renderListStudent() {
 }
 
 function deleteStudent(id) {
-  var student = students.find((item) => item.id === id);
+  const student = students.find((item) => item.id === id);
   students.splice(students.indexOf(student), 1);
   renderListStudent();
 }
 
-var idUpdate;
+let idUpdate;
 function editStudent(id) {
   idUpdate = id;
-  let student = students.find((item) => item.id === id);
+  const student = students.find((item) => item.id === id);
   document.getElementById("name").value = student.name;
   document.getElementById("age").value = student.age;
   document.getElementById("email").value = student.email;
@@ -206,7 +206,7 @@ function editStudent(id) {
 }
 
 function updateStudent() {
-  var student = students.find((item) => item.id === idUpdate);
+  const student = students.find((item) => item.id === idUpdate);
 
   student.id = student.id;
   student.name = document.getElementById("name").value;
@@ -219,7 +219,7 @@ function updateStudent() {
     email: student.email,
     score: student.score,
   };
-  let isValidate = validate(params);
+  const isValidate = validate(params);
   if (!isValidate) {
     return;
   }
@@ -241,8 +241,8 @@ function sort(field, type) {
   conditions.sort.filed = field;
   conditions.sort.type = type;
   renderListStudent();
-  let currentId = field + type;
-  let listId = [
+  const currentId = field + type;
+  const listId = [
     "nameASC",
     "nameDESC",
     "ageASC",
@@ -252,7 +252,7 @@ function sort(field, type) {
     "scoreASC",
     "scoreDESC",
   ];
-  for (i = 0; i < listId.length; i++) {
+  for (let i = 0; i < listId.length; i++) {
     if (currentId === listId[i]) {
       document.getElementById(`${listId[i]}`).style.color = "red";
     } else {
@@ -262,8 +262,8 @@ function sort(field, type) {
 }
 
 function renderPageNumber(totalItems) {
-  var totalPage = Math.ceil(totalItems / conditions.perPage);
-  var data = "";
+  const totalPage = Math.ceil(totalItems / conditions.perPage);
+  let data = "";
   for (let i = 1; i <= totalPage; i++) {
     data += `<li ${
       i === conditions.currentPage ? 'style="color:red"' : ""
